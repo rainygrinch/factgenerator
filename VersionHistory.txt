@@ -1,0 +1,121 @@
+v1.0
+
+Created framework but no functionality
+Added .env file with true API keys
+Called .env file from main
+Used keywords to search for videos on Pexels
+Downloaded videos
+
+v1.1
+
+Voiceover generation implemented, maybe...
+Added Script Generation, using GPTv2.0 - but it's awful
+Saved all topics entered to a file
+
+v1.2
+
+Upgraded to ChatGPT 3.5
+Added option for Claude
+Added option to manually generate the script
+Auto paste response to clipbaord so user does nto have to copy it
+offered backup api key for openai
+
+v1.3
+
+Added voice generation, set to save to file
+Set file name as topic entered
+
+v1.4
+
+Built subtitle generation
+Fixed issue where subtitle srt file would not save
+
+v1.5
+
+to-do = combine video, audio and subtitles
+
+v1.6
+
+create to preserve the commented out functions in v1.5, which have been removed from 1.6 to reduce file size
+
+v2.0
+
+refactored code as had too many errors, stripped it back and started again
+can now generate a video with the voice over, but very limited on the voiceover duration
+also, video is not vertical
+bugfix: voice generated for whole script, not just first line, by telling chatgpt in prompt to print on one line, no line breaks
+
+v2.1
+
+added cropping effect for videos to make them vertical
+
+v2.2
+
+was lost somehow, reverted to v1.5 and re-updated from this version history
+
+v2.3
+
+Now generates subtitles ANd burns them correctly onto video
+
+v2.4
+
+subtitles now in teh correct colour, but out of time and at bottom of screen
+
+v2.5
+
+Made some progress with final video output - added a freeze function to try to permit to videos to be stitched together
+OVerall still not working though, and subtitles appear at the bottom - switching focus to debug subtitle issue again
+in next version
+
+
+
+
+
+
+Plans for Future:
+
+1. Voiceover Generation
+ Integrate a Text-to-Speech (TTS) API (e.g., Google Text-to-Speech, Amazon Polly, etc.) to convert the generated script into an audio file (e.g., voiceover.mp3).
+ Ensure that the audio file is saved and the correct file path is returned.
+2. Add Subtitles to Video
+ Implement a subtitle overlay using a library like moviepy or ffmpeg.
+ Sync subtitles with the script, so each line appears at the correct timestamp.
+ Ensure subtitles are added to the video before it's finalized.
+3. YouTube Video Upload
+ Implement actual video upload functionality using the YouTube Data API.
+Set up authentication and authorization with OAuth 2.0.
+Provide video metadata (title, description, tags) along with the video file for uploading.
+Implement error handling for successful and failed uploads.
+ Ensure the video is uploaded correctly to the YouTube channel.
+4. Video Download Functionality
+ Implement the video download functionality:
+Fetch the stock video URLs from Pexels.
+Download the videos and save them to the downloaded_videos folder.
+Ensure that each video is saved with a unique filename (video_1.mp4, video_2.mp4, etc.).
+5. Error Handling and Retries
+ Add error handling for failed video downloads (e.g., retry on failure, log errors).
+ Add error handling for API requests (Pexels, YouTube, etc.) in case of issues (e.g., rate limits, network errors).
+6. Dynamic Script Generation
+ Replace the static script in the generate_script function with dynamic AI-based script generation.
+Use GPT-3 or GPT-4 (or another AI model) to create a script based on the input topic.
+Ensure the generated script is comprehensive and suitable for the video.
+7. Scheduled Task for Automation
+ Implement scheduling to run the script automatically at set intervals (e.g., using cron on Linux or Task Scheduler on Windows).
+The script should automatically fetch trending topics, generate scripts, fetch videos, add subtitles, generate voiceovers, and upload the video to YouTube.
+8. Improved Environment Variable Handling
+ Improve error handling when checking for missing environment variables:
+Add clearer error messages and logging.
+Ensure the script exits cleanly if any required variable is missing.
+Consider adding notifications (e.g., email alerts) for missing environment variables.
+9. Stock Video API Handling
+ Improve the handling of the Pexels API:
+Add better error handling for failed API requests.
+Ensure the script gracefully handles cases where no stock videos are found.
+Implement retries in case of API limit errors.
+10. Subtitles and Syncing (Optional Enhancement)
+ Consider using an automatic speech-to-text service (e.g., Google Cloud Speech-to-Text) to generate subtitles directly from the voiceover audio.
+ Sync the subtitles to the correct video timestamps.
+Priority Tasks (Immediate Focus):
+Voiceover Generation (to replace placeholder function).
+Add Subtitles (overlay and sync subtitles to the video).
+YouTube Upload (integrate YouTube Data API for actual upload functionality).
